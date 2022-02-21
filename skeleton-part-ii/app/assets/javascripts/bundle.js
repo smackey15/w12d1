@@ -539,8 +539,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  entities: _entities_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  ui: _ui_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  entities: _entities_reducer__WEBPACK_IMPORTED_MODULE_1__["default"] // ui: uiReducer
+
 });
 /* harmony default export */ __webpack_exports__["default"] = (rootReducer);
 
