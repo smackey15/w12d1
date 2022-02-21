@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const store = configureStore();
   ReactDOM.render(<Root store={store} />, rootEl)
 
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
   window.requestSinglePokemon = requestSinglePokemon;
   window.receivePokemon = receivePokemon;
   window.PokemonReducer = PokemonReducer;

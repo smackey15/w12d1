@@ -392,6 +392,8 @@ document.addEventListener("DOMContentLoaded", function () {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
   }), rootEl);
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
   window.requestSinglePokemon = _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_4__["requestSinglePokemon"];
   window.receivePokemon = _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_4__["receivePokemon"];
   window.PokemonReducer = _reducers_pokemon_reducer__WEBPACK_IMPORTED_MODULE_5__["default"];
