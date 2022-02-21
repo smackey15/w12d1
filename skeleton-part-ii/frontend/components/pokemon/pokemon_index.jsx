@@ -10,17 +10,16 @@ class PokemonIndex extends React.Component{
   this.props.requestAllPokemon()
   }
   
+
   render(){
+    const pokemonItems = pokemon.map(poke => (
+      <PokemonIndexItem key={poke.id} pokemon={poke}/>
+    ));
+
     return (
     <section className="pokedex">
       <ul>
-      {this.props.pokemon.map((poke) => (
-        <li className="pokemon-index-item">
-          <span>{poke.id}</span>
-          <img src={poke.imageUrl}/>
-          <span>{poke.name}</span>
-        </li>
-      ))}
+        {pokemonItems}
       </ul>
     </section>
     )
