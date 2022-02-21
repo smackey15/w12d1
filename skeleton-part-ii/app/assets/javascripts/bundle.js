@@ -392,12 +392,12 @@ document.addEventListener("DOMContentLoaded", function () {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
   }), rootEl);
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
   window.requestSinglePokemon = _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_4__["requestSinglePokemon"];
   window.receivePokemon = _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_4__["receivePokemon"];
   window.PokemonReducer = _reducers_pokemon_reducer__WEBPACK_IMPORTED_MODULE_5__["default"];
   window.fetchPokemon = _util_api_util__WEBPACK_IMPORTED_MODULE_6__["fetchPokemon"];
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
 });
 
 /***/ }),
@@ -414,12 +414,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _pokemon_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pokemon_reducer */ "./frontend/reducers/pokemon_reducer.js");
 /* harmony import */ var _items_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./items_reducer */ "./frontend/reducers/items_reducer.js");
+/* harmony import */ var _moves_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./moves_reducer */ "./frontend/reducers/moves_reducer.js");
+
 
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   pokemon: _pokemon_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  items: _items_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  items: _items_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  moves: _moves_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -452,6 +455,36 @@ var itemsReducer = function itemsReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (itemsReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/moves_reducer.js":
+/*!********************************************!*\
+  !*** ./frontend/reducers/moves_reducer.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/pokemon_actions */ "./frontend/actions/pokemon_actions.js");
+
+
+var movesReducer = function movesReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_POKEMON"]:
+      return action.pokemon.moves;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (movesReducer);
 
 /***/ }),
 
